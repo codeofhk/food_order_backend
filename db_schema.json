@@ -1,0 +1,48 @@
+{
+    "outlet" :{
+        "id":"int",
+        "name":"string",
+        "payment_link":"string",
+        "closed":"bool"
+    },
+    "menuItem":{
+        "id":"int",
+        "name":"string",
+        "price":"int",
+        "outlet_id":{"outlet.id":"int"}
+    },
+    "student":{
+        "id":"int",
+        "password":"string",
+        "name":"string",
+        "phone":"int",
+        "email":"string"
+    },
+    "orders":{
+        "id":"int",
+        "student_id":{"student.id":"int"},
+        "date_time":"data_time",
+        "total_price":"int"
+    },
+    "order_item":{
+        "order_id":{"order.id":"int"},
+        "menu_id":{"menuItem.id":"int"},
+        "quantity":"int",
+        "price":{"menu.price * quantity":"int"}
+
+    },
+    "payment":{
+        "id":"int",
+        "order_id":{"order.id":"int"},
+        "amount":"int",
+        "date_time":"data_time",
+        "intiated":"bool",
+        "completed":"bool",
+        "ref_id":"string"
+    },
+    "order_status":{
+        "order_id":{"order.id":"int"},
+        "intiated":"bool",
+        "completed":"bool"
+    }
+}
